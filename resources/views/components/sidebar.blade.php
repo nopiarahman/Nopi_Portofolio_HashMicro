@@ -8,42 +8,51 @@
                 </a>
             </li>
             {{-- Master Data --}}
-            <li class="nav-item nav-category">MASTER DATA</li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#order" aria-expanded="false"
                     aria-controls="order">
                     <i class="menu-icon mdi mdi-human-greeting"></i>
-                    <span class="menu-title">Pembelian</span>
+                    <span class="menu-title">INPUT TEST</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/barang') }}">
+            {{-- Master Data --}}
+            <li class="nav-item nav-category">MASTER DATA</li>
+            <li class="nav-item @yield('menuBarang')">
+                <a class="nav-link" data-bs-toggle="collapse" href="#barang" aria-expanded="false"
+                    aria-controls="barang">
                     <i class="menu-icon mdi mdi-package-variant-closed"></i>
-                    <span class="menu-title">Stok Barang</span>
+                    <span class="menu-title">Barang</span>
+                    <i class="menu-arrow"></i>
                 </a>
+                <div class="collapse" id="barang">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item @yield('menuPembelian')"><a class="nav-link"
+                                href="{{ url('/pembelian') }}">Pembelian
+                                dari Supplier</a></li>
+                        <li class="nav-item @yield('menuStok')"><a class="nav-link"
+                                href="{{ url('/barang') }}">Stok</a></li>
+                    </ul>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/logistik') }}">
+            <li class="nav-item @yield('menuSupplier')">
+                <a class="nav-link" href="{{ url('/supplier') }}">
                     <i class="menu-icon mdi mdi-car-connected"></i>
                     <span class="menu-title">Supplier</span>
                 </a>
             </li>
             {{-- Keuangan --}}
             <li class="nav-item nav-category">KEUANGAN</li>
-
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#transaksi" aria-expanded="false"
-                    aria-controls="transaksi">
+            <li class="nav-item @yield('menuPenjualan')">
+                <a class="nav-link" href="{{ url('/penjualan') }}">
+                    <i class="menu-icon mdi mdi-car-connected"></i>
+                    <span class="menu-title">Penjualan</span>
+                </a>
+            </li>
+            <li class="nav-item @yield('menuTransaksi')">
+                <a class="nav-link" href="{{ url('/transaksi') }}">
                     <i class="menu-icon mdi mdi-autorenew"></i>
                     <span class="menu-title">Transaksi</span>
-                    <i class="menu-arrow"></i>
                 </a>
-                <div class="collapse" id="transaksi">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"><a class="nav-link" href="#">Masuk</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Keluar</a></li>
-                    </ul>
-                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#kas" aria-expanded="false"
