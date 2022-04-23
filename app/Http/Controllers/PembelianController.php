@@ -69,4 +69,10 @@ class PembelianController extends Controller
         $pdf=PDF::loadview('pembelian.cetak',compact('barangMasuk'))->setPaper('A4','portait');
         return $pdf->download('Riwayat Barang Masuk .pdf');
     }
+    public function masukHapus(pembelian $id){
+        $stokBarang=barang::find($id->barang_id);
+        $stokBarang->update(['jumlah'=>$stokBarang->jumlah-$id->jumlah]);
+        $id->delete();
+        return redirect()->back()->with('sukses','Transaksi Berhasil Dihapus');
+    }
 }

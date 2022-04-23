@@ -52,6 +52,7 @@ Route::middleware([
         Route::get('/pembelianCetak', 'pembelianCetak')->name('pembelianCetak');
         Route::post('/pembelian', 'store')->name('pembelianSimpan');
         Route::delete('/pembelian/{id}', 'destroy');
+        Route::delete('/masukHapus/{id}', 'masukHapus');
     });
     Route::controller(PenjualanController::class)->group(function () {
         Route::get('/penjualan', 'index')->name('penjualan');

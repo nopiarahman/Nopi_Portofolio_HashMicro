@@ -222,9 +222,10 @@
                                 <td>{{ $b->jumlah }}</td>
                                 <td>
                                     {{-- <a href="barang/{{$b->id}}" class="btn btn-info btn-sm"><i class="fas fa-pen"></i>Edit</a> --}}
-                                    <button class="btn btn-danger btn-sm" data-toggle="modal"
-                                        data-target="#exampleModalCenter" data-id="{{ $b->id }}"
-                                        data-nama="{{ $b->nama }}"> <i class="fas fa-trash" aria-hidden="true"></i>
+                                    <button class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalCenter" data-id="{{ $b->id }}"
+                                        data-nama="{{ $b->barang->nama }}"> <i class="fas fa-trash"
+                                            aria-hidden="true"></i>
                                         Hapus</button>
                                 </td>
                             </tr>
