@@ -8,11 +8,10 @@
                 </a>
             </li>
             {{-- Master Data --}}
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#order" aria-expanded="false"
-                    aria-controls="order">
-                    <i class="menu-icon mdi mdi-human-greeting"></i>
-                    <span class="menu-title">INPUT TEST</span>
+            <li class="nav-item @yield('menuInput')">
+                <a class="nav-link" href="{{ url('/inputTest') }}">
+                    <i class="menu-icon mdi mdi-car-connected"></i>
+                    <span class="menu-title">Input Test</span>
                 </a>
             </li>
             {{-- Master Data --}}
@@ -54,7 +53,7 @@
                     <span class="menu-title">Transaksi</span>
                 </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#kas" aria-expanded="false"
                     aria-controls="kas">
                     <i class="menu-icon mdi mdi-wallet"></i>
@@ -67,15 +66,15 @@
                         <li class="nav-item"> <a class="nav-link" href="#">Kas Kecil</a></li>
                     </ul>
                 </div>
-            </li>
+            </li> --}}
             {{-- Settings --}}
-            <li class="nav-item nav-category">pengaturan</li>
+            {{-- <li class="nav-item nav-category">pengaturan</li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="menu-icon mdi mdi-account-key"></i>
                     <span class="menu-title">Kelola User</span>
                 </a>
-            </li>
+            </li> --}}
 
             {{-- Bantuan --}}
             <li class="nav-item nav-category">Bantuan</li>
@@ -84,6 +83,16 @@
                     <i class="menu-icon mdi mdi-help-circle-outline"></i>
                     <span class="menu-title">Petunjuk Penggunaan</span>
                 </a>
+            </li>
+            <li class="nav-item"">
+                <form method=" POST" action="{{ route('logout') }}">
+                @csrf
+                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                    <i class="menu-icon mdi mdi-power" style="color:brown"></i>
+                    <span class="menu-title" style="color:brown">Logout</span>
+                </a>
+                </form>
             </li>
         </ul>
     </nav>

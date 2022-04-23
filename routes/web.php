@@ -55,12 +55,14 @@ Route::middleware([
     });
     Route::controller(PenjualanController::class)->group(function () {
         Route::get('/penjualan', 'index')->name('penjualan');
-        // Route::get('/penjualanCetak', 'penjualanCetak')->name('penjualanCetak');
         Route::post('/detailSimpan', 'detailSimpan')->name('detailSimpan');
         Route::post('/selesai', 'selesaiTransaksi')->name('selesaiTransaksi');
         Route::delete('/keluarHapus/{id}','keluarHapus');
+        Route::get('/transaksi', 'transaksi')->name('transaksi');
+        Route::get('/transaksiCetak', 'transaksiCetak')->name('transaksiCetak');
         
-        // Route::patch('/penjualan/{id}', 'update')->name('penjualanUpdate');
-        // Route::delete('/penjualan/{id}', 'destroy');
+        Route::get('/inputTest', 'inputTest')->name('inputTest');
+        Route::post('/prosesInput', 'prosesInput')->name('prosesInput');
     });
+
 });
