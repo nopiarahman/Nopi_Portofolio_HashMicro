@@ -52,7 +52,7 @@ class PembelianController extends Controller
             $barang=barang::find($request->barang_id);
             $barang->update(['jumlah'=>$barang->jumlah+$request->jumlah]);
             DB::commit();
-            return redirect()->route('masuk')->with('success','Data Berhasil Disimpan');
+            return redirect()->route('pembelian')->with('success','Data Berhasil Disimpan');
         } catch (\exception $ex) {
             DB::rollback();
             return redirect()->back()->with('error','Gagal. Pesan Error: '.$ex->getMessage());
