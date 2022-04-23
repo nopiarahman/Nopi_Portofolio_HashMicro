@@ -84,14 +84,14 @@
                     <span class="menu-title">Petunjuk Penggunaan</span>
                 </a>
             </li>
-            <li class="nav-item"">
-                <form method=" POST" action="{{ route('logout') }}">
-                @csrf
-                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+            <li class="nav-item">
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                     this.closest('form').submit();">
-                    <i class="menu-icon mdi mdi-power" style="color:brown"></i>
-                    <span class="menu-title" style="color:brown">Logout</span>
-                </a>
+                        <i class="menu-icon mdi mdi-power" style="color:brown"></i>
+                        <span class="menu-title" style="color:brown">Logout</span>
+                    </a>
                 </form>
             </li>
         </ul>
