@@ -27,7 +27,7 @@ class Penjualan extends Model
      */
     public function detail()
     {
-        return $this->hasOne(detail::class);
+        return $this->hasOne(Detail::class);
     }
     /**
      * Get the user that owns the keluarBarang
